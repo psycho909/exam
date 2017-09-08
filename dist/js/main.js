@@ -9,9 +9,10 @@ require.config({
         "jquery": "./lib/jquery-3.1.1.min",
         "vue": "./lib/vue.min",
         "text":"./lib/text",
+        "chart":"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min"
     }
 });
-require(["jquery","vue","components/pagetemplate"], function ($,Vue,pagetemplate) {
+require(["jquery","vue","components/pagetemplate","chart"], function ($,Vue,pagetemplate,Chart) {
     new Vue({
         el:"#app",
         components:{

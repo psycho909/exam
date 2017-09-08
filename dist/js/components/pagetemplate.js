@@ -1,4 +1,4 @@
-define(["text!../../template/dataAnalysis.html","text!../../template/todayWeather.html"],function(analysis,weather){
+define(["jquery","vue","chart","text!../../template/dataAnalysis.html","text!../../template/todayWeather.html"],function($,Vue,Chart,analysis,weather){
     return {
         analysisPage:{
             template:analysis,
@@ -6,6 +6,35 @@ define(["text!../../template/dataAnalysis.html","text!../../template/todayWeathe
                 return {
                     message:"Hello"
                 }
+            },
+            mounted:function(){
+                var ctx = document.getElementById("myChart").getContext('2d');
+                var chart = new Chart(ctx,{
+                    type: 'line',
+                    data: {
+                        labels: [2007,2008,2009,2010,2011,2012,2013],
+                        datasets: [{
+                            label: 'Men',
+                            backgroundColor: 'rgb(255, 99, 132)',
+                            borderColor: 'rgb(255, 99, 132)',
+                            data: [106898,103937,99492,87213,101943,118848,103120],
+                            fill:false
+                        },{
+                            label: 'Female',
+                            backgroundColor: 'rgb(100, 199, 132)',
+                            borderColor: 'rgb(200, 199, 132)',
+                            data: [97516,94796,91818,79673,94684,110633,95993],
+                            fill:false
+                        }]
+                    },
+                    options: {
+                        elements: {
+                            line: {
+                                tension: 0
+                            }
+                        }
+                    }
+                });
             }
         },
         weatherPage:{
