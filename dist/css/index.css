@@ -140,13 +140,13 @@ html, body {
 
 .wrap #weather .content .weather-wrap .weather .weather-info {
   text-align: center;
-  width: 160px;
+  width: 200px;
   height: 100px;
   position: relative;
 }
 
 .wrap #weather .content .weather-wrap .weather .weather-info .weather-box {
-  width: 160px;
+  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;

@@ -86,8 +86,8 @@ define(["jquery","vue","chart","text!../../template/dataAnalysis.html","text!../
                     return this.weatherapi=`http://api.openweathermap.org/data/2.5/weather?q=${this.city},${this.country}&appid=62bb3ecb2a47725a79e71aa487e5d05e`;
                     
                 },
-                convert:function(v){
-                    return Math.round(v-237);
+                convert:function(x){
+                    return Math.round(x-273);
                 }
             }
         }

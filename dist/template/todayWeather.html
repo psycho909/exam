@@ -24,8 +24,10 @@
                     </div>
                 </div>
             </div>
-            <div class="temp"><span class="title">Temerature:</span>{{convert(weather.main.temp_min)}} ~ {{convert(weather.main.temp_max)}}</div>
+            <div class="temp"><span class="title">Temerature:</span>{{convert(weather.main.temp_min)}}°C ~ {{convert(weather.main.temp_max)}}°C</div>
             <div class="humidity"><span class="title">Humidity:</span>{{weather.main.humidity}}%</div>
+            <div class="city-txt"><span class="title">City:</span>{{weather.name}}</div>
+            <div class="country-txt"><span class="title">Country:</span>{{weather.sys.country}}</div>
         </div>
         <div v-else class="weather-wrap">
             <div v-if="status == 404" class="weather-txt">
