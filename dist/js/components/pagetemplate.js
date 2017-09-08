@@ -56,27 +56,61 @@ define(["jquery","vue","chart","text!../../template/dataAnalysis.html","text!../
             watch:{
                 weatherapi:function(val){
                     var _this=this;
-                    fetch(_this.weatherapi).then(function(res){
-                        _this.status=res.status;
-                        return res.json();
-                    }).then(function(datas){
-                        _this.weather=datas;
-                    }).catch(function(err){
-                        console.log(err)
+                    $.ajax({
+                        url:_this.weatherapi,
+                        dataType:"json",
+                        statusCode:{
+                            200:function(res){
+                                _this.status=200;
+                                console.log(200)
+                            },
+                            404:function(res){
+                                _this.status=404;
+                                console.log(404)
+                            }
+                        },
+                        beforeSend:function(){
+                            $('.loading').show()
+                        },
+                        complete:function(){
+                            $('.loading').hide()
+                        },
+                        success:function(res){
+                            _this.weather=res;
+                        },
+                        error:function(){
+                            console.log('error')
+                        }
                     })
                 }
             },
             mounted:function(){
                 var _this=this;
-                fetch(this.weatherapi).then(function(res){
-                    _this.status=res.status;
-                    console.log(_this.status)
-                    return res.json();
-                }).then(function(datas){
-                    _this.weather=datas;
-                    console.log(datas)
-                }).catch(function(err){
-                    console.log(err)
+                $.ajax({
+                    url:_this.weatherapi,
+                    dataType:"json",
+                    statusCode:{
+                        200:function(res){
+                            _this.status=200;
+                            console.log(200)
+                        },
+                        404:function(res){
+                            _this.status=404;
+                            console.log(404)
+                        }
+                    },
+                    beforeSend:function(){
+                        $('.loading').show()
+                    },
+                    complete:function(){
+                        $('.loading').hide()
+                    },
+                    success:function(res){
+                        _this.weather=res;
+                    },
+                    error:function(){
+                        console.log('error')
+                    }
                 })
             },
             methods:{

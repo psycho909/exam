@@ -12,29 +12,32 @@
             </div>
             <button class="btn" v-on:click="showweather">Search</button>
         </div>
-        <div v-if="status == 200 " class="weather-wrap">
-            <div class="weather">
-                <div class="ui">
-                    <img v-bind:src="'http://openweathermap.org/img/w/'+weather.weather[0].icon+'.png'" alt="">
-                </div>
-                <div class="weather-info">
-                    <div class="weather-box">
-                        <div class="main">{{weather.weather[0].main}}</div>
-                        <div class="description">{{weather.weather[0].description}}</div>
+        <div class="weather-wrap-box">
+            <div class="loading">Loading...</div>
+            <div v-if="status == 200 " class="weather-wrap">
+                <div class="weather">
+                    <div class="ui">
+                        <img v-bind:src="'http://openweathermap.org/img/w/'+weather.weather[0].icon+'.png'" alt="">
+                    </div>
+                    <div class="weather-info">
+                        <div class="weather-box">
+                            <div class="main">{{weather.weather[0].main}}</div>
+                            <div class="description">{{weather.weather[0].description}}</div>
+                        </div>
                     </div>
                 </div>
+                <div class="temp"><span class="title">Temerature:</span>{{convert(weather.main.temp_min)}}°C ~ {{convert(weather.main.temp_max)}}°C</div>
+                <div class="humidity"><span class="title">Humidity:</span>{{weather.main.humidity}}%</div>
+                <div class="city-txt"><span class="title">City:</span>{{weather.name}}</div>
+                <div class="country-txt"><span class="title">Country:</span>{{weather.sys.country}}</div>
             </div>
-            <div class="temp"><span class="title">Temerature:</span>{{convert(weather.main.temp_min)}}°C ~ {{convert(weather.main.temp_max)}}°C</div>
-            <div class="humidity"><span class="title">Humidity:</span>{{weather.main.humidity}}%</div>
-            <div class="city-txt"><span class="title">City:</span>{{weather.name}}</div>
-            <div class="country-txt"><span class="title">Country:</span>{{weather.sys.country}}</div>
-        </div>
-        <div v-else class="weather-wrap">
-            <div v-if="status == 404" class="weather-txt">
-                <div class="error">Not found city</div>
-            </div>
-            <div v-else class="weather-txt">
-                請查詢
+            <div v-else class="weather-wrap">
+                <div v-if="status == 404" class="weather-txt">
+                    <div class="error">Not found city</div>
+                </div>
+                <div v-else class="weather-txt">
+                    請查詢
+                </div>
             </div>
         </div>
     </div>

@@ -125,27 +125,43 @@ html, body {
   margin-right: 12px;
 }
 
-.wrap #weather .content .weather-wrap .weather {
+.wrap #weather .content .weather-wrap-box {
+  width: 700px;
+  height: 180px;
+  position: relative;
+}
+
+.wrap #weather .content .weather-wrap-box .loading {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+
+.wrap #weather .content .weather-wrap-box .weather-wrap .weather {
   display: flex;
 }
 
-.wrap #weather .content .weather-wrap .weather .ui {
+.wrap #weather .content .weather-wrap-box .weather-wrap .weather .ui {
   margin-right: 12px;
 }
 
-.wrap #weather .content .weather-wrap .weather .ui img {
+.wrap #weather .content .weather-wrap-box .weather-wrap .weather .ui img {
   width: 100px;
   display: block;
 }
 
-.wrap #weather .content .weather-wrap .weather .weather-info {
+.wrap #weather .content .weather-wrap-box .weather-wrap .weather .weather-info {
   text-align: center;
   width: 200px;
   height: 100px;
   position: relative;
 }
 
-.wrap #weather .content .weather-wrap .weather .weather-info .weather-box {
+.wrap #weather .content .weather-wrap-box .weather-wrap .weather .weather-info .weather-box {
   width: 100%;
   position: absolute;
   top: 50%;
@@ -153,17 +169,17 @@ html, body {
   transform: translate(-50%, -50%);
 }
 
-.wrap #weather .content .weather-wrap .weather .weather-info .weather-box .main {
+.wrap #weather .content .weather-wrap-box .weather-wrap .weather .weather-info .weather-box .main {
   font-size: 18px;
   font-weight: bold;
 }
 
-.wrap #weather .content .weather-wrap .weather .weather-info .weather-box .description {
+.wrap #weather .content .weather-wrap-box .weather-wrap .weather .weather-info .weather-box .description {
   padding: 6px 0;
   color: #4C4C4C;
 }
 
-.wrap #weather .content .weather-wrap .weather-txt .error {
+.wrap #weather .content .weather-wrap-box .weather-wrap .weather-txt .error {
   padding: 6px;
   padding-left: 32px;
   border: 1px solid #8D2424;
@@ -171,7 +187,7 @@ html, body {
   position: relative;
 }
 
-.wrap #weather .content .weather-wrap .weather-txt .error:before {
+.wrap #weather .content .weather-wrap-box .weather-wrap .weather-txt .error:before {
   content: "x";
   display: block;
   position: absolute;

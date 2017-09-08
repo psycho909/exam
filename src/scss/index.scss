@@ -65,60 +65,74 @@ html,body{
 					margin-right: 12px;
 				}
 			}
-			.weather-wrap{
-				.weather{
-					display: flex;
-					.ui{
-						margin-right: 12px;
-						img{
-							width: 100px;
-							display: block;
-						}
-					}
-					.weather-info{
-						text-align: center;
-						width: 200px;
-						height: 100px;
-						position: relative;
-						.weather-box{
-							width: 100%;
-							position: absolute;
-							top: 50%;
-							left: 50%;
-							transform:translate(-50%,-50%);
-							.main{
-								font-size: 18px;
-								font-weight: bold;
-							}
-							.description{
-								padding: 6px 0;
-								color:#4C4C4C;
-							}
-						}
-					}
+			.weather-wrap-box{
+				width: 700px;
+				height: 180px;
+				position: relative;
+				.loading{
+					width: 100%;
+					height: 100%;
+					background-color: #fff;
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 9;
 				}
-				.weather-txt{
-					.error{
-						padding: 6px;
-						padding-left: 32px;
-						border:1px solid #8D2424;
-						background-color:#FFF5F7;
-						position: relative;
-						&:before{
-							content:"x";
-							display: block;
-							position: absolute;
-							border-radius: 50%;
-							top: 50%;
-							transform:translateY(-50%);
-							left: 6px;
-							width: 16px;
-							height: 16px;
+				.weather-wrap{
+					.weather{
+						display: flex;
+						.ui{
+							margin-right: 12px;
+							img{
+								width: 100px;
+								display: block;
+							}
+						}
+						.weather-info{
 							text-align: center;
-							line-height: 16px;
-							font-family: Arial;
-							border:2px solid red;
-							color:red;
+							width: 200px;
+							height: 100px;
+							position: relative;
+							.weather-box{
+								width: 100%;
+								position: absolute;
+								top: 50%;
+								left: 50%;
+								transform:translate(-50%,-50%);
+								.main{
+									font-size: 18px;
+									font-weight: bold;
+								}
+								.description{
+									padding: 6px 0;
+									color:#4C4C4C;
+								}
+							}
+						}
+					}
+					.weather-txt{
+						.error{
+							padding: 6px;
+							padding-left: 32px;
+							border:1px solid #8D2424;
+							background-color:#FFF5F7;
+							position: relative;
+							&:before{
+								content:"x";
+								display: block;
+								position: absolute;
+								border-radius: 50%;
+								top: 50%;
+								transform:translateY(-50%);
+								left: 6px;
+								width: 16px;
+								height: 16px;
+								text-align: center;
+								line-height: 16px;
+								font-family: Arial;
+								border:2px solid red;
+								color:red;
+							}
 						}
 					}
 				}
