@@ -1,0 +1,127 @@
+@import '_reset';
+
+/*=====================================*/
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	font-family:'微軟正黑體',"Arial";
+}
+.wrap{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 12px;
+	.left-side{
+		width: 20%;
+		ul{
+			li{
+				padding: 5px 5px 5px 20px;;
+				border:1px solid #c0c0c0;
+				font-family: Arial;
+				font-size: 12px;
+				&:hover{
+					border-color:#2a9fcd;
+					background-color: #e7dbff;
+					cursor: pointer;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+	.content{
+		width: 78%;
+		.pages{
+			display: none;
+			font-family: Arial;
+			&.active{
+				display: block;
+			}
+			.title{
+				padding-bottom:4px;
+				border-bottom: 1px solid #000;
+			}
+		}
+	}
+	#weather{
+		.content{
+			.form-inline{
+				display: inline-flex;
+				margin-top: 12px;
+				margin-bottom: 12px;
+				.form-group{
+					margin-right: 12px;
+				}
+			}
+			.weather-wrap{
+				.weather{
+					display: flex;
+					.ui{
+						margin-right: 12px;
+						img{
+							width: 100px;
+							display: block;
+						}
+					}
+					.weather-info{
+						text-align: center;
+						width: 160px;
+						height: 100px;
+						position: relative;
+						.weather-box{
+							width: 160px;
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							transform:translate(-50%,-50%);
+							.main{
+								font-size: 18px;
+								font-weight: bold;
+							}
+							.description{
+								padding: 6px 0;
+								color:#4C4C4C;
+							}
+						}
+					}
+				}
+				.weather-txt{
+					.error{
+						padding: 6px;
+						padding-left: 32px;
+						border:1px solid #8D2424;
+						background-color:#FFF5F7;
+						position: relative;
+						&:before{
+							content:"x";
+							display: block;
+							position: absolute;
+							border-radius: 50%;
+							top: 50%;
+							transform:translateY(-50%);
+							left: 6px;
+							width: 16px;
+							height: 16px;
+							text-align: center;
+							line-height: 16px;
+							font-family: Arial;
+							border:2px solid red;
+							color:red;
+						}
+					}
+				}
+			}
+			span.title{
+				border:0;
+				display: inline-block;
+				width: 100px;
+				font-family: Arial;
+			}
+		}
+	}
+}

@@ -1,0 +1,39 @@
+<div id="weather" class="pages active">
+    <div class="title">Today's Weather</div>
+    <div class="content">
+        <div class="form-inline">
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" placeholder="Taipei" class="city">
+            </div>
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <input type="text" placeholder="TW" class="country">
+            </div>
+            <button class="btn" v-on:click="showweather">Search</button>
+        </div>
+        <div v-if="status == 200 " class="weather-wrap">
+            <div class="weather">
+                <div class="ui">
+                    <img v-bind:src="'http://openweathermap.org/img/w/'+weather.weather[0].icon+'.png'" alt="">
+                </div>
+                <div class="weather-info">
+                    <div class="weather-box">
+                        <div class="main">{{weather.weather[0].main}}</div>
+                        <div class="description">{{weather.weather[0].description}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="temp"><span class="title">Temerature:</span>{{convert(weather.main.temp_min)}} ~ {{convert(weather.main.temp_max)}}</div>
+            <div class="humidity"><span class="title">Humidity:</span>{{weather.main.humidity}}%</div>
+        </div>
+        <div v-else class="weather-wrap">
+            <div v-if="status == 404" class="weather-txt">
+                <div class="error">Not found city</div>
+            </div>
+            <div v-else class="weather-txt">
+                請查詢
+            </div>
+        </div>
+    </div>
+</div>
